@@ -52,47 +52,74 @@
 body {
   width: 100%;
   margin: 0px;
-  background-color: #ccffcc;
+  background-color: #47476b;
+  font-family: 'Nunito', sans-serif;
 }
 
-/* line 13, ../../compass/sass/styles.scss */
+/* line 14, ../../compass/sass/styles.scss */
 .body h1 {
   text-align: center;
   font-size: 60px;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
 }
-/* line 17, ../../compass/sass/styles.scss */
+/* line 20, ../../compass/sass/styles.scss */
 .body .container {
   width: 1600px;
   overflow: hidden;
 }
-/* line 20, ../../compass/sass/styles.scss */
+/* line 23, ../../compass/sass/styles.scss */
 .body .container.after-header {
   padding-top: 40px;
 }
-/* line 23, ../../compass/sass/styles.scss */
+/* line 26, ../../compass/sass/styles.scss */
+.body .container .header-wrapper {
+  background-color: #1f1f2e;
+}
+/* line 29, ../../compass/sass/styles.scss */
 .body .container .col {
   width: 380px;
   margin: auto 10px;
   float: left;
-  color: #000;
+  color: #fff;
 }
-/* line 29, ../../compass/sass/styles.scss */
+/* line 35, ../../compass/sass/styles.scss */
+.body .container .col:hover .overview {
+  display: block;
+  text-align: left;
+  font-size: 15px;
+}
+/* line 40, ../../compass/sass/styles.scss */
 .body .container .col span {
   display: block;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Nunito', sans-serif;
 }
-/* line 34, ../../compass/sass/styles.scss */
+/* line 47, ../../compass/sass/styles.scss */
+.body .container .col .overview {
+  display: none;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Nunito', sans-serif;
+}
+/* line 57, ../../compass/sass/styles.scss */
 .body .search {
   text-align: center;
   padding: 30px;
 }
-/* line 37, ../../compass/sass/styles.scss */
+/* line 60, ../../compass/sass/styles.scss */
 .body .search input.searches {
   font-size: 20px;
   width: 30%;
+  font-family: 'Nunito', sans-serif;
 }
-/* line 41, ../../compass/sass/styles.scss */
+/* line 65, ../../compass/sass/styles.scss */
 .body .search input.button {
   font-size: 20px;
-  background-color: blue;
+  background-color: black;
   color: white;
+  font-family: 'Nunito', sans-serif;
 }

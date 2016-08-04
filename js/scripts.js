@@ -11,16 +11,21 @@ $(document).ready(function(){
 
 	// begin with set of now playing movies until user makes a search
 	$.getJSON(npURL, function(nowPlayingData){
-		// console.log(nowPlayingData);
+		console.log(nowPlayingData);
 		var npHTML = '';
 		for(var i = 0; i < nowPlayingData.results.length; i++){
 			npHTML += '<div class="col">';
 				npHTML += '<span>'+ nowPlayingData.results[i].title+'</span>';
 				var posterUrl = imageBaseUrl + 'w300'+ nowPlayingData.results[i].poster_path;
-				npHTML +='<img src="'+ posterUrl+ '">';
+				var bigImage = imageBaseUrl + 'w780'+ nowPlayingData.results[i].poster_path;
+				var overview = nowPlayingData.results[i].overview;
+					npHTML += '<span class="overview">'+nowPlayingData.results[i].overview+'</span>';
+				npHTML +='<a class="single_image" href="'+bigImage+'"><img src="'+ posterUrl+ '"></a>';
 			npHTML +='</div>';	
 		}
 		$('.poster-grid').html(npHTML);
+		$(".single_image").fancybox();
+
 	});
 
 	//add click listener for when user makes search
@@ -36,10 +41,14 @@ $(document).ready(function(){
 				searchHTML += '<div class="col">';
 					searchHTML += '<span>'+searchMovieData.results[i].title+'</span>';
 					var posterUrl = imageBaseUrl + 'w300'+ searchMovieData.results[i].poster_path;
-					searchHTML +='<img src="'+posterUrl+ '">';
+					var bigImage = imageBaseUrl + 'w780'+ searchMovieData.results[i].poster_path;
+					var overview = searchMovieData.results[i].overview;
+						searchHTML += '<span class="overview">'+searchMovieData.results[i].overview+'</span>';
+					searchHTML +='<a class="single_image" href="'+bigImage+'"><img src="'+ posterUrl+ '"></a>';
 				searchHTML +='</div>';	
 			}
 			$('.poster-grid').html(searchHTML);
+			$(".single_image").fancybox();
 		});
 
 	});
