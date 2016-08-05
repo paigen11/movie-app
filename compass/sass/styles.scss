@@ -27,9 +27,9 @@ body{
 			background-color: #1f1f2e;
 		}
 		.col{
-			width: getColumnWidth($width, $numColumns, $margin);
+			width: 23%;
 			margin: auto $margin;
-			float: left;
+			display: inline-block;
 			@extend .base-font;
 			color: #fff;
 			&:hover .overview{

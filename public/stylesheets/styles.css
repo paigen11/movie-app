@@ -78,9 +78,9 @@ body {
 }
 /* line 29, ../../compass/sass/styles.scss */
 .body .container .col {
-  width: 380px;
+  width: 23%;
   margin: auto 10px;
-  float: left;
+  display: inline-block;
   color: #fff;
 }
 /* line 35, ../../compass/sass/styles.scss */
