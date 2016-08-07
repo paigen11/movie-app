@@ -8,8 +8,8 @@ $(document).ready(function(){
 	var apiKey = "?api_key=fec8b5ab27b292a68294261bb21b04a5";
 	var npURL = apiBaseUrl + "movie/now_playing" + apiKey;
 	var searchURL = apiBaseUrl + "search/movie" + apiKey;
-	var genreUrl = apiBaseUrl + "genre/movie/list" + apiKey;
-	var genreObject;
+	var multiSearchUrl = apiBaseUrl + "search/multi" + apiKey;
+	var searchObject;
 
 	// begin with set of now playing movies until user makes a search
 	$.getJSON(npURL, function(nowPlayingData){
@@ -31,72 +31,52 @@ $(document).ready(function(){
 
 	});
 
-// 	// create dropdown genre menu options
-// 	$.getJSON(genreUrl, function(genreData){
-// 		genreObject = genreData;
-// 		var dropdownHTML = '<option></option>';
-// 		// console.log(genreData);
-// 		for(var i = 0; i < genreData.genres.length; i++){
-// 			dropdownHTML += '<option value="' + genreData.genres[i].id + '">' + genreData.genres[i].name + '</option>';
-// 		}
-// 		$('#listGenre').html(dropdownHTML);
-// 		$('#listGenre').change(function(){
-// 			createIdGrid(this.value);
+	// search options for different data
+	$('#search-options').change(function(){
+		// get search option determined
+		var searchOption = $('#search-options option:selected').val();
+		// console.log(searchOption);
+		var newResults = [];
+		var search = $('.searches').val();
+		var titleUrl = baseUrl + 'search/' + apiKey + '&query=' +search;
+		var searchHTML = '';
+
+		$.getJSON(titleUrl, function(titleData){
+			$(titleData.results).each(function(){
+				if(search == 'person'){
+					$('#info').html("Persons of Interest");
+					newResults.push(this.name);
+					searchHTML += '<div class="poster person-profile col"><img src="' + imgBaseURL + 'w300' + this.profile_path + '"></div>';
+				}
+		
+		})	
+	});		
+
+
+
+// 	//add click listener for when user makes search
+// 	$('.button').click(function(){
+
+// 		var movie = $('.searches').val();
+// 		var search = searchURL + '&query=' + movie;
+// 		// console.log(search);
+
+// 		$.getJSON(search, function(searchMovieData){
+// 			var searchHTML = '';
+// 			for(var i = 0; i < searchMovieData.results.length; i++){
+// 				searchHTML += '<div class="col">';
+// 					searchHTML += '<span>'+searchMovieData.results[i].title+'</span>';
+// 					var posterUrl = imageBaseUrl + 'w300'+ searchMovieData.results[i].poster_path;
+// 					var bigImage = imageBaseUrl + 'w780'+ searchMovieData.results[i].poster_path;
+// 					var overview = searchMovieData.results[i].overview;
+// 						searchHTML += '<span class="overview">'+searchMovieData.results[i].overview+'</span>';
+// 					searchHTML +='<a class="single_image" href="'+bigImage+'"><img src="'+ posterUrl+ '"></a>';
+// 				searchHTML +='</div>';	
+// 			}
+// 			$('.poster-grid').html(searchHTML);
+// 			$(".single_image").fancybox();
 // 		});
+
 // 	});
-
-// 	function populateGrid(data){
-// 		var newHTML = '';
-// 		var idNum = '';
-// 			for(var i = 0; i < data.results.length; i++){
-// 				for(var j = 0; j < data.results[i].genre_ids.length; j++){
-// 					idNum += ' ' + data.results[i].genre_ids[j];
-// 				}
-// 			newHTML += '<div class="col' + idNum + '">';
-// 				newHTML += '<span>'+ data.results[i].title +<'</span>';
-// 				var posterUrl = imageBaseUrl + 'w300'+ data.results[i].poster_path;
-// 				var bigImage = imageBaseUrl + 'w780'+ data.results[i].poster_path;
-// 				var overview = data.results[i].overview;
-// 					newHTML += '<span class="overview">'+data.results[i].overview+'</span>';
-// 				newHTML +='<a class="single_image" href="'+bigImage+' id="' + data.results[i].id + '"><img src="'+ posterUrl+ '"></a>';
-// 				var genreIdNum = data.results[i].genre_ids;
-// 					newHTML += genreID(genreIdNum);
-// 				newHTML += '</div>';	
-// 	}
-// 	$('.poster-grid').html(newHTML);
-// 	$('.single_image').fancybox();
-// }
-
-// 	function createIdGrid(ID){
-// 		$.getJSON(apiBaseUrl + 'genre/' + ID + '/movies' + apiKey, function(genreIdData){
-// 			console.log(genreIdData);
-// 			populateGrid(genreIdData);
-// 		});
-// 	}
-
-	//add click listener for when user makes search
-	$('.button').click(function(){
-
-		var movie = $('.searches').val();
-		var search = searchURL + '&query=' + movie;
-		// console.log(search);
-
-		$.getJSON(search, function(searchMovieData){
-			var searchHTML = '';
-			for(var i = 0; i < searchMovieData.results.length; i++){
-				searchHTML += '<div class="col">';
-					searchHTML += '<span>'+searchMovieData.results[i].title+'</span>';
-					var posterUrl = imageBaseUrl + 'w300'+ searchMovieData.results[i].poster_path;
-					var bigImage = imageBaseUrl + 'w780'+ searchMovieData.results[i].poster_path;
-					var overview = searchMovieData.results[i].overview;
-						searchHTML += '<span class="overview">'+searchMovieData.results[i].overview+'</span>';
-					searchHTML +='<a class="single_image" href="'+bigImage+'"><img src="'+ posterUrl+ '"></a>';
-				searchHTML +='</div>';	
-			}
-			$('.poster-grid').html(searchHTML);
-			$(".single_image").fancybox();
-		});
-
-	});
 
 });

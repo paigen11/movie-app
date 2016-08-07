@@ -1,0 +1,125 @@
+/**
+ * @file
+ * SMACSS Modules
+ *
+ * Adds modular sets of styles.
+ *
+ * Additional useful selectors can be found in Zen's online documentation.
+ * https://drupal.org/node/1707736
+ */
+/* line 38, ../compass/sass/components/_misc.scss */
+.base-font, .body .container .col {
+  font-family: "source-serif-pro",Georgia,"Times New Roman",Times,serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ddd;
+}
+
+/* line 5, ../compass/sass/layout/_header.scss */
+.header {
+  width: 100%;
+  position: fixed;
+  background-color: red;
+  height: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 11, ../compass/sass/layout/_header.scss */
+.header .circle {
+  border-radius: 20px;
+  background-color: #ff00ff;
+  border: 3px solid #0000ff;
+  height: 30px;
+  width: 30px;
+}
+
+/* line 5, ../compass/sass/layout/_footer.scss */
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  height: 30px;
+  background-color: blue;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* line 6, ../compass/sass/styles.scss */
+body {
+  width: 100%;
+  margin: 0px;
+  background-color: #47476b;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* line 15, ../compass/sass/styles.scss */
+.body h1 {
+  text-align: center;
+  font-size: 60px;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+}
+/* line 21, ../compass/sass/styles.scss */
+.body .container {
+  width: 1600px;
+  overflow: hidden;
+}
+/* line 24, ../compass/sass/styles.scss */
+.body .container.after-header {
+  padding-top: 40px;
+}
+/* line 27, ../compass/sass/styles.scss */
+.body .container .header-wrapper {
+  background-color: #1f1f2e;
+}
+/* line 30, ../compass/sass/styles.scss */
+.body .container .col {
+  width: 23%;
+  margin: auto 10px;
+  display: inline-block;
+  color: #fff;
+}
+/* line 36, ../compass/sass/styles.scss */
+.body .container .col:hover .overview {
+  display: block;
+  text-align: left;
+  font-size: 15px;
+}
+/* line 41, ../compass/sass/styles.scss */
+.body .container .col span {
+  display: block;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Nunito', sans-serif;
+}
+/* line 48, ../compass/sass/styles.scss */
+.body .container .col .overview {
+  display: none;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Nunito', sans-serif;
+}
+/* line 58, ../compass/sass/styles.scss */
+.body .search {
+  text-align: center;
+  padding: 30px;
+}
+/* line 61, ../compass/sass/styles.scss */
+.body .search input.searches {
+  font-size: 20px;
+  width: 30%;
+  font-family: 'Nunito', sans-serif;
+}
+/* line 66, ../compass/sass/styles.scss */
+.body .search input.button {
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+}

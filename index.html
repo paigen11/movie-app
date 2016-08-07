@@ -22,13 +22,22 @@
 			<div class="header-wrapper">
 				<h1>Pick A Movie, Any Movie</h1>
 				<div class="search">
-					<input type="text" class="searches" placeholder="Search movie names here">
+					<input type="text" class="searches" placeholder="Search here">
 					<input type="submit" class="button" value="Search">
 				</div>
-				<!-- <div class='dropdown-options search'>
-					<h3>Genres</h3>
-					<select id="listGenre"></select>
-				</div> -->
+				<div class='dropdown-options search'>
+					<h3>Select Search</h3>
+					<select id="search-options">
+						<option option="selected"></option>
+						<option value="movie">Movie</option>
+						<option value="tv">Television</option>
+						<option value="person">Person</option>
+						<option value="multi">All</option>
+					</select>	
+				</div>
+			</div>
+			<div class="page-heading">
+				<h2 id="info">Now Playing</h2>
 			</div>	
 			<div class="poster-grid">
 				<!-- jQuery get us some HTML -->
