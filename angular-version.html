@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+<head>
+	<title></title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+	<script type="text/javascript" src="movieAngular.js"></script>
+
+	<style type="text/css" media="screen">
+        .container-fluid{
+        	padding-left: 0px;
+        	padding-right: 0px;
+        	text-align: center;
+        }
+
+        .bubble{
+            animation: pulse 1s infinite;
+            border: 5px solid white;
+        }
+
+        @keyframes pulse {
+        0%      { transform:scale(1); }
+        25%     { transform:scale(1.5); }
+        75%     { transform:scale(1); }
+        }
+
+        .headerStyles{
+        	text-decoration:  line-through;
+        }
+
+    </style>
+
+</head>
+<body ng-style="{'background-color': '#000'}" ng-controller="movieController">
+
+<div class="container-fluid">
+	<div class="header-wrapper" ng-style="myStyle">
+		<div class="row">
+			<h1 ng-class="{headerStyles: searchbar}">Angular Movie App</h1>
+		</div>
+		<div class="row">
+			<form ng-submit="getNewMovieStuff()">
+				<input type="text" ng-model="searchbar">
+				<button type="btn btn-default">Search</button>
+			</form>
+			<input type="checkbox" ng-model="pulse">Insane Mode
+			<input type="checkbox" ng-model="checked1">Remove Movie
+			<input type="checkbox" ng-model="checked2">Show Posters
+		</div>
+	</div>
+</div>	
+
+	<div class="container">
+		<div class="row">
+			<div ng-if="!checked1" ng-repeat="movie in movieArray | filter:searchbar" class="col-sm-3 movie-poster">
+			<img ng-show="checked2" ng-class="{bubble: pulse}" ng-src="{{imagePath}}{{movie.poster_path}}">
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
