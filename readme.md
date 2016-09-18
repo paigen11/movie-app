@@ -2,6 +2,10 @@
 ---
 Movie site using HTML, CSS (via SASS), jQuery, the MovieDB API and the FancyBox API to display now playing movies and their summaries. 
 
+##Live Demo
+---
+[Live demo](http://paigeniedringhaus.com/movieApp/)
+
 ##Languages Used
 ---
   * HTML
