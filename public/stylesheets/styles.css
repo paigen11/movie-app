@@ -65,7 +65,7 @@ body {
 }
 /* line 20, ../../compass/sass/styles.scss */
 .body .container {
-  width: 1600px;
+  width: 100%;
   overflow: hidden;
 }
 /* line 23, ../../compass/sass/styles.scss */
@@ -83,13 +83,25 @@ body {
   display: inline-block;
   color: #fff;
 }
-/* line 35, ../../compass/sass/styles.scss */
+@media screen and (min-width: 900px) and (max-width: 1100) {
+  /* line 29, ../../compass/sass/styles.scss */
+  .body .container .col {
+    width: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* line 29, ../../compass/sass/styles.scss */
+  .body .container .col {
+    width: auto;
+  }
+}
+/* line 41, ../../compass/sass/styles.scss */
 .body .container .col:hover .overview {
   display: block;
   text-align: left;
   font-size: 15px;
 }
-/* line 40, ../../compass/sass/styles.scss */
+/* line 46, ../../compass/sass/styles.scss */
 .body .container .col span {
   display: block;
   font-size: 20px;
@@ -97,7 +109,7 @@ body {
   padding-bottom: 10px;
   font-family: 'Nunito', sans-serif;
 }
-/* line 47, ../../compass/sass/styles.scss */
+/* line 53, ../../compass/sass/styles.scss */
 .body .container .col .overview {
   display: none;
   font-size: 20px;
@@ -105,18 +117,18 @@ body {
   padding-bottom: 10px;
   font-family: 'Nunito', sans-serif;
 }
-/* line 57, ../../compass/sass/styles.scss */
+/* line 63, ../../compass/sass/styles.scss */
 .body .search {
   text-align: center;
   padding: 30px;
 }
-/* line 60, ../../compass/sass/styles.scss */
+/* line 66, ../../compass/sass/styles.scss */
 .body .search input.searches {
   font-size: 20px;
   width: 30%;
   font-family: 'Nunito', sans-serif;
 }
-/* line 65, ../../compass/sass/styles.scss */
+/* line 71, ../../compass/sass/styles.scss */
 .body .search input.button {
   font-size: 20px;
   background-color: black;

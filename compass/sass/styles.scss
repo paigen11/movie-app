@@ -18,7 +18,7 @@ body{
 		font-family: 'Nunito', sans-serif;
 	}
 	.container{
-		width: $width;
+		width: 100%;
 		overflow: hidden;
 		&.after-header{
 			padding-top: 40px;
@@ -30,6 +30,12 @@ body{
 			width: 23%;
 			margin: auto $margin;
 			display: inline-block;
+			@media screen and (min-width: 900px) and (max-width:1100){
+				width: auto;
+				}
+			@media screen and (max-width: 600px){
+				width: auto;
+				}
 			@extend .base-font;
 			color: #fff;
 			&:hover .overview{
@@ -71,3 +77,4 @@ body{
 		}
 		
 }
+
