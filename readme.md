@@ -4,7 +4,7 @@ Movie site using HTML, CSS (via SASS), jQuery, the MovieDB API and the FancyBox 
 
 ##Live Demo
 ---
-[Live demo](http://paigeniedringhaus.com/movieApp/)
+[Live demo](http://pn-movie-app.surge.sh/)
 
 ##Languages Used
 ---
